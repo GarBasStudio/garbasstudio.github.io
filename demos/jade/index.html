@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Peluquería Jade · Propuesta de web por GarBas Studio</title>
+<meta name="description" content="Propuesta de diseño web con reservas online para Peluquería Jade (Deusto), preparada por GarBas Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3'%3E%3Cstop offset='0' stop-color='%23B9E4CC'/%3E%3Cstop offset='.5' stop-color='%233E8E74'/%3E%3Cstop offset='1' stop-color='%230F3D33'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../reservas.css">
+<style>
+/* Layout: joya de jade pulida como pieza central; verdes profundos + marfil + oro; Bodoni para el lujo, Figtree para la claridad */
+:root{
+  --deep:#0C2F27; --deep2:#123C32; --jade:#3E8E74; --jade-l:#7FC2A3; --mist:#E6F1EA; --ivory:#F6F5EF; --gold:#C9A96E; --gold-d:#9B7D45; --ink:#13201C; --muted:#5E6D66; --line:#DCE5DE;
+  --display:"Bodoni Moda", Didot, Georgia, serif; --body:"Figtree", system-ui, -apple-system, sans-serif;
+  --bk-bg:#FAFBF8; --bk-fg:var(--ink); --bk-card:#fff; --bk-line:var(--line); --bk-muted:var(--muted); --bk-accent:var(--deep); --bk-accent-fg:#fff; --bk-soft:var(--mist); --bk-radius:24px; --bk-display:var(--display); --bk-accent-text:var(--jade);
+  --ag-bg:var(--deep); --ag-fg:var(--ivory); --ag-accent:var(--gold); --ag-accent-fg:var(--deep);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font:16.5px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.5rem,5.4vw,4.4rem)}
+h2 em,h1 em{font-style:italic;color:var(--jade)}
+p{margin:0}
+.kick{font:600 .72rem/1 var(--body);letter-spacing:.26em;text-transform:uppercase;color:var(--gold-d)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:999px;font:600 .95rem var(--body);text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn-deep{background:var(--deep);color:var(--ivory);box-shadow:0 16px 34px -18px rgba(12,47,39,.8)}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-line{border:1px solid currentColor;background:transparent}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(246,245,239,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:78px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.gem{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#D8F0E2 0,#7FC2A3 22%,#3E8E74 50%,#0C2F27 100%);box-shadow:inset -3px -4px 8px rgba(0,0,0,.35),0 4px 10px -3px rgba(12,47,39,.5);flex:none}
+.brand span{display:grid;line-height:1}
+.brand b{font:500 1.7rem/1 var(--display);letter-spacing:.02em}
+.brand small{font:600 .58rem/1 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:.94rem;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--muted)}.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:12px 22px;font-size:.88rem}
+@media (max-width:880px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(40px,7vw,96px) clamp(70px,9vw,120px);overflow:hidden}
+.hero::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(127,194,163,.28),transparent 62%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(3.3rem,7.8vw,6.8rem);margin-top:22px}
+.hero .lead{font-size:1.18rem;color:var(--muted);max-width:31em;margin-top:26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+.chips span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:500;display:inline-flex;gap:8px;align-items:center}
+.chips span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jade)}
+
+.stone-wrap{position:relative;width:min(440px,84vw);aspect-ratio:1;justify-self:center}
+.stone{position:absolute;inset:8%;border-radius:47% 53% 50% 50% / 52% 46% 54% 48%;background:
+  radial-gradient(ellipse 30% 20% at 32% 24%,rgba(255,255,255,.85),rgba(255,255,255,0) 70%),
+  radial-gradient(circle at 70% 75%,rgba(12,47,39,.6),transparent 55%),
+  radial-gradient(circle at 40% 40%,#B9E4CC 0,#7FC2A3 22%,#3E8E74 48%,#1D5B4A 72%,#0C2F27 100%);
+  box-shadow:inset -24px -30px 60px rgba(0,0,0,.35),inset 18px 20px 40px rgba(255,255,255,.18),0 60px 90px -40px rgba(12,47,39,.7);animation:morph 14s ease-in-out infinite}
+.stone::after{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-radial-gradient(circle at 60% 60%,rgba(255,255,255,.05) 0 3px,transparent 3px 11px);mix-blend-mode:overlay}
+@keyframes morph{50%{border-radius:53% 47% 46% 54% / 47% 54% 46% 53%;transform:rotate(6deg)}}
+.ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,169,110,.55)}
+.ring.r2{inset:-6%;border-style:dashed;border-color:rgba(62,142,116,.35);animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tagf{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:0 24px 44px -24px rgba(12,47,39,.45);font-size:.86rem;display:flex;gap:12px;align-items:center;white-space:nowrap}
+.tagf i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--mist);font-style:normal;color:var(--deep);font-weight:700}
+.tagf small{display:block;color:var(--muted)}
+.t1{left:-6%;top:12%}.t2{right:-4%;bottom:14%}
+@media (max-width:520px){.t1{left:0}.t2{right:0}}
+@media (prefers-reduced-motion:reduce){.stone,.ring.r2{animation:none}html{scroll-behavior:auto}}
+
+.band{background:var(--deep);color:var(--ivory);overflow:hidden;padding-block:20px}
+.band .track{display:flex;width:max-content;animation:scroll 40s linear infinite;font:400 clamp(1.3rem,2.6vw,2rem)/1 var(--display);font-style:italic;white-space:nowrap}
+.band .track span{display:inline-flex;align-items:center;gap:36px;padding-right:36px}
+.band .track span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.band .track{animation:none}}
+
+section{padding-block:clamp(80px,10vw,140px)}
+.head{display:grid;gap:18px;max-width:44rem;margin-bottom:clamp(40px,5vw,64px)}
+.head p{color:var(--muted);font-size:1.1rem}
+
+/* especialidades */
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:1000px){.spec{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.spec{grid-template-columns:1fr}}
+.sp{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:transform .3s,box-shadow .3s}
+.sp:hover{transform:translateY(-6px);box-shadow:0 30px 50px -34px rgba(12,47,39,.5)}
+.sp .vis{height:120px;border-radius:18px;position:relative;overflow:hidden}
+.v-curl{background:radial-gradient(circle at 30% 50%,transparent 18px,#7FC2A3 19px 23px,transparent 24px) 0 0/48px 48px,radial-gradient(circle at 70% 50%,transparent 14px,#3E8E74 15px 18px,transparent 19px) 12px 20px/44px 44px,var(--mist)}
+.v-color{background:linear-gradient(100deg,#3B2416,#7A4A2A 30%,#C98A52 55%,#E8C99A 80%,#F4E4C6)}
+.v-color::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.12) 0 2px,transparent 2px 8px)}
+.v-kera{background:repeating-linear-gradient(180deg,#E9EFE9 0 6px,#F8FAF7 6px 12px);}
+.v-kera::after{content:"";position:absolute;left:-20%;right:-20%;top:40%;height:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);transform:skewY(-6deg)}
+.v-beauty{background:radial-gradient(circle at 32% 55%,#C98A7A 0 17%,transparent 17.5%),radial-gradient(circle at 50% 45%,#E8B9A8 0 17%,transparent 17.5%),radial-gradient(circle at 68% 55%,#9C5C52 0 17%,transparent 17.5%),linear-gradient(135deg,#F6ECE4,#E9D6C8)}
+.sp h3{font-size:1.75rem}
+.sp p{color:var(--muted);font-size:.95rem}
+.sp button{margin-top:auto;align-self:flex-start;background:none;border:0;padding:6px 0;font:600 .9rem var(--body);color:var(--jade);cursor:pointer;border-bottom:1.5px solid currentColor}
+
+/* diagnóstico */
+.diag{background:var(--deep);color:var(--ivory);position:relative;overflow:hidden}
+.diag::after{content:"";position:absolute;width:600px;height:600px;left:-200px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(127,194,163,.22),transparent 65%)}
+.diag .kick{color:var(--gold)}
+.diag h2 em{color:var(--jade-l)}
+.diag .head p{color:#A9C2B7}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start;position:relative;z-index:1}
+@media (max-width:900px){.dg{grid-template-columns:1fr}}
+.q{display:grid;gap:12px;margin-bottom:28px}
+.q b{font:400 1.5rem var(--display)}
+.q .opts{display:flex;flex-wrap:wrap;gap:10px}
+.q button{font:500 .95rem var(--body);color:var(--ivory);background:rgba(255,255,255,.04);border:1px solid #2E5A4D;border-radius:14px;padding:13px 18px;cursor:pointer;transition:all .2s}
+.q button:hover{border-color:var(--jade-l)}
+.q button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--deep);font-weight:600}
+.res{background:var(--ivory);color:var(--ink);border-radius:26px;padding:clamp(24px,3vw,36px);display:grid;gap:14px;min-height:300px;align-content:start;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.res small{font:600 .7rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d)}
+.res h3{font-size:2.2rem}
+.res p{color:var(--muted)}
+.res ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.res li{display:flex;gap:10px}
+.res li::before{content:"✦";color:var(--jade)}
+.res .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;padding-top:12px;border-top:1px solid var(--line)}
+.res .meta b{font-weight:600}
+.res .btn{justify-self:start;margin-top:6px}
+.res.empty{place-content:center;text-align:center;color:var(--muted)}
+
+/* carta */
+.carta{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 70px}
+@media (max-width:820px){.carta{grid-template-columns:1fr}}
+.cg h3{font-size:2rem;margin-bottom:10px;display:flex;align-items:baseline;gap:12px}
+.cg h3 small{font:600 .66rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d)}
+.cr{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:15px 0;border-top:1px solid var(--line)}
+.cr b{font-weight:500}
+.cr em{font-style:normal;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cr small{color:var(--muted);font-size:.88rem}
+.note{margin-top:30px;color:var(--muted);font-size:.92rem}
+
+.book{background:var(--mist)}
+.book .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:start}
+@media (max-width:900px){.book .wrap{grid-template-columns:1fr}}
+.perks{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.perks li{display:flex;gap:12px;align-items:flex-start}
+.perks li::before{content:"";flex:none;width:24px;height:24px;border-radius:50%;background:var(--deep) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A96E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat}
+
+.owner .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+@media (max-width:900px){.owner .wrap{grid-template-columns:1fr}}
+.pill{display:inline-block;background:var(--deep);color:var(--gold);font:600 .66rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.gains div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
+.gains b{display:block;font:500 1.8rem/1 var(--display);color:var(--jade)}
+.gains small{color:var(--muted);font-size:.84rem}
+
+/* instagram */
+.insta{background:#fff;border-block:1px solid var(--line)}
+.ig-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+@media (max-width:820px){.ig{grid-template-columns:repeat(3,1fr)}}
+.ig a{aspect-ratio:1;border-radius:16px;position:relative;overflow:hidden;display:block}
+.ig a::after{content:"";position:absolute;inset:0;background:rgba(12,47,39,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.8'%3E%3Crect x='3' y='3' width='18' height='18' rx='5'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Ccircle cx='17.5' cy='6.5' r='1' fill='white'/%3E%3C/svg%3E") center/30px no-repeat;opacity:0;transition:opacity .25s}
+.ig a:hover::after{opacity:1}
+.ig a:nth-child(1){background:linear-gradient(140deg,#3B2416,#C98A52 60%,#F4E4C6)}
+.ig a:nth-child(2){background:radial-gradient(circle at 30% 30%,#B9E4CC,#3E8E74 60%,#0C2F27)}
+.ig a:nth-child(3){background:linear-gradient(160deg,#F3E6DC,#D9B8A2)}
+.ig a:nth-child(4){background:repeating-linear-gradient(110deg,#1C1A18 0 6px,#2C2824 6px 12px)}
+.ig a:nth-child(5){background:linear-gradient(200deg,#E8C99A,#9B6A3E)}
+.ig a:nth-child(6){background:radial-gradient(circle at 70% 30%,#E6F1EA,#7FC2A3 70%)}
+
+.visit .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}}
+.vb{background:var(--deep);color:var(--ivory);border-radius:28px;padding:clamp(26px,4vw,48px);display:grid;gap:22px;align-content:space-between;min-height:360px;position:relative;overflow:hidden}
+.vb::after{content:"";position:absolute;width:260px;height:260px;right:-60px;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B9E4CC 0,#7FC2A3 22%,#3E8E74 50%,#0C2F27 100%);opacity:.9;box-shadow:inset -20px -24px 40px rgba(0,0,0,.35)}
+.vb h2{font-size:clamp(2.4rem,5vw,4rem);position:relative;z-index:1}
+.vb h2 em{color:var(--jade-l)}
+.vb .row{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.vi{background:#fff;border:1px solid var(--line);border-radius:28px;padding:clamp(26px,4vw,40px);display:grid;gap:18px;align-content:start}
+.vi dl{margin:0;display:grid;gap:18px}
+.vi dt{font:600 .68rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d)}
+.vi dd{margin:6px 0 0;font-size:1.05rem}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:6px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.hours .off td{color:var(--muted)}
+
+footer{background:var(--deep);color:#A9C2B7;padding-block:48px 30px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer .brand b{color:var(--ivory)}footer .brand small{color:#7FA597}
+.mbook{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(246,245,239,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:none}
+.mbook .btn{width:100%;justify-content:center}
+@media (max-width:760px){.mbook{display:block}footer{padding-bottom:100px}}
+</style>
+</head>
+<body>
+<div class="proposal">Propuesta de diseño de <b>GarBas Studio</b> para Peluquería Jade · No es la web oficial · Precios y horarios de ejemplo <a href="https://garbasstudio.github.io">garbasstudio.github.io</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="gem" aria-hidden="true"></span><span><b>Jade</b><small>Peluquería · Estética</small></span></a>
+    <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#diagnostico">¿Qué necesita tu pelo?</a></li><li><a href="#precios">Precios</a></li><li><a href="#visita">Dónde estamos</a></li></ul>
+    <a class="btn btn-deep" href="#reservar">Pedir cita</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">Peluquería y estética · Deusto, Bilbao</span>
+      <h1>Imagen y bienestar, <em>a tu medida.</em></h1>
+      <p class="lead">Cortes, color, rizos, keratina y estética en un espacio pensado para que te sientas bien. Reserva tu cita online en un minuto, a cualquier hora.</p>
+      <div class="ctas"><a class="btn btn-deep" href="#reservar">Reservar cita online</a><a class="btn btn-line" href="#diagnostico">¿Qué necesita tu pelo?</a></div>
+      <div class="chips"><span>Especialistas en rizos</span><span>Balayage y color</span><span>Keratina</span><span>Estética</span></div>
+    </div>
+    <div class="stone-wrap" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div><div class="stone"></div>
+      <div class="tagf t1"><i>✓</i><span><b>Cita confirmada</b><small>Sábado · 10:30 · Corte rizos</small></span></div>
+      <div class="tagf t2"><i>✦</i><span><b>Nueva reserva</b><small>Balayage · Jueves 16:00</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="track" id="track"><span>Corte de rizos</span><span>Balayage</span><span>Keratina</span><span>Color</span><span>Extensiones</span><span>Peinados</span><span>Cejas</span><span>Manicura</span></div></div>
+
+<section id="especialidades">
+  <div class="wrap">
+    <div class="head"><span class="kick">Especialidades</span><h2>Lo que mejor <em>sabemos hacer.</em></h2><p>Cada pelo es distinto. Por eso empezamos siempre escuchándote y mirando tu pelo antes de tocar las tijeras.</p></div>
+    <div class="spec">
+      <article class="sp"><div class="vis v-curl" aria-hidden="true"></div><h3>Rizos</h3><p>Corte en seco, rizo a rizo, y rutina de cuidado para que tus rizos luzcan definidos cada día.</p><button type="button" data-pick="rizos">Reservar corte de rizos</button></article>
+      <article class="sp"><div class="vis v-color" aria-hidden="true"></div><h3>Color y balayage</h3><p>Degradados naturales, mechas y tinte con productos que cuidan tu pelo.</p><button type="button" data-pick="bal">Reservar balayage</button></article>
+      <article class="sp"><div class="vis v-kera" aria-hidden="true"></div><h3>Keratina</h3><p>Pelo liso, brillante y sin encrespamiento durante meses.</p><button type="button" data-pick="kera">Reservar keratina</button></article>
+      <article class="sp"><div class="vis v-beauty" aria-hidden="true"></div><h3>Estética</h3><p>Diseño de cejas, depilación facial y manicura para completar tu imagen.</p><button type="button" data-pick="cejas">Reservar estética</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="diag" id="diagnostico">
+  <div class="wrap">
+    <div class="head"><span class="kick">Diagnóstico en 10 segundos</span><h2>¿Qué necesita <em>tu pelo?</em></h2><p>Responde dos preguntas y te recomendamos el servicio ideal. Después, reserva con un toque.</p></div>
+    <div class="dg">
+      <div>
+        <div class="q"><b>¿Cómo es tu pelo?</b><div class="opts" data-q="tipo"><button type="button" data-v="liso" aria-pressed="false">Liso</button><button type="button" data-v="ondulado" aria-pressed="false">Ondulado</button><button type="button" data-v="rizado" aria-pressed="false">Rizado</button></div></div>
+        <div class="q"><b>¿Qué buscas?</b><div class="opts" data-q="obj"><button type="button" data-v="corte" aria-pressed="false">Un corte nuevo</button><button type="button" data-v="color" aria-pressed="false">Cambiar de color</button><button type="button" data-v="cuidar" aria-pressed="false">Cuidarlo y repararlo</button><button type="button" data-v="evento" aria-pressed="false">Un evento especial</button></div></div>
+      </div>
+      <div class="res empty" id="res" aria-live="polite"><p>Elige una opción en cada pregunta<br>y aquí aparecerá tu recomendación.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <div class="head"><span class="kick">Servicios y precios</span><h2>Precios claros, <em>sin sorpresas.</em></h2><p>Precios orientativos para melena media. Te confirmamos el precio exacto antes de empezar.</p></div>
+    <div class="carta">
+      <div class="cg"><h3>Corte y peinado</h3>
+        <div class="cr"><b>Corte y peinado</b><em>30 €</em><small>Lavado, corte y secado</small></div>
+        <div class="cr"><b>Corte de rizos</b><em>38 €</em><small>Corte en seco y definición</small></div>
+        <div class="cr"><b>Corte caballero</b><em>15 €</em></div>
+        <div class="cr"><b>Peinado de evento</b><em>40 €</em><small>Bodas, comuniones y fiestas</small></div>
+      </div>
+      <div class="cg"><h3>Color <small>Especialidad</small></h3>
+        <div class="cr"><b>Balayage</b><em>desde 85 €</em><small>Incluye tratamiento y matiz</small></div>
+        <div class="cr"><b>Tinte raíz</b><em>35 €</em></div>
+        <div class="cr"><b>Mechas</b><em>desde 65 €</em></div>
+        <div class="cr"><b>Baño de color</b><em>20 €</em><small>Brillo y matiz</small></div>
+      </div>
+      <div class="cg"><h3>Tratamientos</h3>
+        <div class="cr"><b>Keratina</b><em>desde 110 €</em><small>Hasta 4 meses sin encrespamiento</small></div>
+        <div class="cr"><b>Hidratación profunda</b><em>22 €</em></div>
+        <div class="cr"><b>Valoración de extensiones</b><em>Gratis</em></div>
+      </div>
+      <div class="cg"><h3>Estética</h3>
+        <div class="cr"><b>Diseño de cejas</b><em>12 €</em></div>
+        <div class="cr"><b>Depilación facial</b><em>8 €</em></div>
+        <div class="cr"><b>Manicura semipermanente</b><em>20 €</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="reservar">
+  <div class="wrap">
+    <div>
+      <span class="kick">Reserva online</span>
+      <h2 style="margin-top:18px">Tu cita, <em>cuando a ti te venga bien.</em></h2>
+      <p style="color:var(--muted);margin-top:20px;font-size:1.08rem">Sin esperar a que cojamos el teléfono. Elige el servicio, el día y la hora, y listo.</p>
+      <ul class="perks"><li>Huecos libres reales, al momento</li><li>Confirmación inmediata en tu móvil</li><li>Recordatorio el día antes</li><li>Añádela a tu calendario con un toque</li></ul>
+    </div>
+    <div id="booking" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="owner">
+  <div class="wrap">
+    <div>
+      <span class="pill">Solo para el salón</span>
+      <h2 style="margin-top:20px">Y así lo <em>verías tú.</em></h2>
+      <p style="color:var(--muted);margin-top:18px;font-size:1.08rem">Cada reserva entra sola en tu agenda y te llega un aviso al móvil, también de noche y en domingo. Mientras atiendes a una clienta, la siguiente ya está reservando.</p>
+      <div class="gains"><div><b>24 h</b><small>recibiendo citas</small></div><div><b>0 €</b><small>de comisión por cita</small></div><div><b>Menos</b><small>llamadas mientras trabajas</small></div></div>
+      <p style="margin-top:22px;font-weight:600">Prueba: haz una reserva arriba y mira cómo entra aquí.</p>
+    </div>
+    <div id="agenda"></div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <div class="ig-head"><div class="head" style="margin:0"><span class="kick">Instagram</span><h2>Nuestro trabajo, <em>cada día.</em></h2></div><a class="btn btn-deep" href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener">Seguir en Instagram</a></div>
+    <div class="ig" aria-label="Últimas publicaciones de Instagram"><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a><a href="https://www.instagram.com/jade_pelu/" target="_blank" rel="noopener" aria-label="Publicación"></a></div>
+    <p class="note">En la web real, aquí aparecen vuestras últimas fotos de Instagram y se actualizan solas.</p>
+  </div>
+</section>
+
+<section class="visit" id="visita">
+  <div class="wrap">
+    <div class="vb"><span class="kick" style="color:var(--gold)">Te esperamos</span><h2>En el corazón <em>de Deusto.</em></h2><div class="row"><a class="btn btn-gold" href="#reservar">Reservar cita</a><a class="btn btn-line" href="https://wa.me/34676852119" rel="noopener">WhatsApp</a></div></div>
+    <div class="vi">
+      <dl>
+        <div><dt>Dónde estamos</dt><dd>Deusto · Bilbao</dd></div>
+        <div><dt>Teléfono y WhatsApp</dt><dd><a href="tel:+34676852119">676 85 21 19</a></dd></div>
+        <div><dt>Horario</dt><dd><table class="hours"><tr><td>Lunes a viernes</td><td>9:30 – 19:30</td></tr><tr><td>Sábado</td><td>9:30 – 14:00</td></tr><tr class="off"><td>Domingo</td><td>Cerrado</td></tr></table></dd></div>
+      </dl>
+      <a class="btn btn-line" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa+Jade+Deusto+Bilbao" target="_blank" rel="noopener">Cómo llegar →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><a class="brand" href="#"><span class="gem" aria-hidden="true"></span><span><b>Jade</b><small>Peluquería · Estética · Deusto</small></span></a><p>Diseño: GarBas Studio</p></div></footer>
+<div class="mbook"><a class="btn btn-deep" href="#reservar">Reservar cita online</a></div>
+
+<script>
+const tr=document.getElementById("track");tr.innerHTML+=tr.innerHTML;
+window.DEMO = {
+  slug:"jade", name:"Peluquería Jade", who:"salón", address:"Deusto, Bilbao", slot:30, days:21,
+  hours:{1:[["09:30","19:30"]],2:[["09:30","19:30"]],3:[["09:30","19:30"]],4:[["09:30","19:30"]],5:[["09:30","19:30"]],6:[["09:30","14:00"]]},
+  services:[
+    {id:"corte",cat:"Corte y peinado",name:"Corte y peinado",dur:60,price:30},
+    {id:"rizos",cat:"Corte y peinado",name:"Corte de rizos",dur:75,price:38,desc:"Corte en seco y definición"},
+    {id:"cab",cat:"Corte y peinado",name:"Corte caballero",dur:30,price:15},
+    {id:"evento",cat:"Corte y peinado",name:"Peinado de evento",dur:60,price:40},
+    {id:"bal",cat:"Color",name:"Balayage",dur:180,price:"desde 85 €",desc:"Incluye tratamiento y matiz"},
+    {id:"tinte",cat:"Color",name:"Tinte raíz",dur:90,price:35},
+    {id:"mechas",cat:"Color",name:"Mechas",dur:120,price:"desde 65 €"},
+    {id:"kera",cat:"Tratamientos",name:"Keratina",dur:150,price:"desde 110 €"},
+    {id:"hidra",cat:"Tratamientos",name:"Hidratación profunda",dur:30,price:22},
+    {id:"cejas",cat:"Estética",name:"Diseño de cejas",dur:30,price:12},
+    {id:"mani",cat:"Estética",name:"Manicura semipermanente",dur:45,price:20}
+  ],
+  agendaExamples:[{time:"09:30",svc:"Balayage",name:"Clienta",dur:180},{time:"13:00",svc:"Corte caballero",name:"Cliente",dur:30},{time:"17:00",svc:"Corte de rizos",name:"Clienta",dur:75}]
+};
+
+/* diagnóstico capilar */
+const ans={};
+const RES={
+  rizos:{t:"Corte de rizos",why:"Tu rizo necesita un corte en seco, mechón a mechón, para que caiga con forma y sin volumen de más.",l:["Corte en seco rizo a rizo","Definición con productos sin sulfatos","Rutina para casa"],svc:"rizos"},
+  corte:{t:"Corte y peinado",why:"Un corte adaptado a tu cara y a tu día a día, fácil de peinar en casa.",l:["Asesoramiento de estilo","Lavado con masaje","Secado y peinado"],svc:"corte"},
+  bal:{t:"Balayage",why:"El balayage da luz de forma natural y crece bonito: sin raíz marcada y sin volver cada mes.",l:["Diagnóstico de color","Técnica a mano alzada","Tratamiento y matiz incluidos"],svc:"bal"},
+  tinte:{t:"Color y baño de brillo",why:"Para un cambio de color uniforme y con brillo, sin dañar tu pelo liso.",l:["Tinte a tu medida","Baño de brillo","Consejos de mantenimiento"],svc:"tinte"},
+  kera:{t:"Keratina",why:"Adiós al encrespamiento: pelo liso, brillante y fácil de peinar durante meses.",l:["Diagnóstico capilar","Tratamiento de keratina","Hasta 4 meses de efecto"],svc:"kera"},
+  hidra:{t:"Hidratación profunda",why:"El rizo y la onda piden hidratación. Recupera elasticidad, brillo y definición.",l:["Mascarilla nutritiva","Masaje capilar","Definición final"],svc:"hidra"},
+  evento:{t:"Peinado de evento",why:"Para que ese día estés perfecta de principio a fin. Te recomendamos reservar con tiempo.",l:["Prueba de peinado opcional","Recogidos y ondas","Fijación de larga duración"],svc:"evento"}
+};
+function pickRes(){const t=ans.tipo,o=ans.obj;if(!t||!o)return null;
+  if(o==="evento")return RES.evento;
+  if(o==="corte")return t==="rizado"?RES.rizos:RES.corte;
+  if(o==="color")return t==="liso"?RES.tinte:RES.bal;
+  if(o==="cuidar")return t==="rizado"?RES.hidra:RES.kera;}
+document.querySelectorAll(".q .opts").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;ans[g.dataset.q]=b.dataset.v;
+  g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));const r=pickRes(),el=document.getElementById("res");if(!r)return;
+  const s=DEMO.services.find(x=>x.id===r.svc),p=typeof s.price==="number"?s.price+" €":s.price,d=s.dur>=60?Math.floor(s.dur/60)+" h"+(s.dur%60?" "+s.dur%60+" min":""):s.dur+" min";
+  el.className="res";el.innerHTML=`<small>Te recomendamos</small><h3>${r.t}</h3><p>${r.why}</p><ul>${r.l.map(x=>`<li>${x}</li>`).join("")}</ul><div class="meta"><span>Duración: <b>${d}</b></span><span>Precio: <b>${p}</b></span></div><button class="btn btn-deep" type="button" data-pick="${r.svc}">Reservar ${r.t.toLowerCase()} →</button>`;}));
+document.addEventListener("click",e=>{const p=e.target.closest("[data-pick]");if(p&&window.GarBasBooking)window.GarBasBooking.pick(p.dataset.pick)});
+</script>
+<script src="../reservas.js"></script>
+</body>
+</html>
