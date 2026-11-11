@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Fisioterapia Mikel Cabañes · Propuesta de web por GarBas Studio</title>
+<meta name="description" content="Propuesta de diseño web con reservas online para Fisioterapia Mikel Cabañes, preparada por GarBas Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E8C82'/%3E%3Cpath d='M32 16v32M16 32h32' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../reservas.css">
+<style>
+/* Layout: clínica limpia y cercana; blanco + azul noche + verde agua; mapa corporal interactivo como pieza central */
+:root{
+  --navy:#0F2A3D; --teal:#0E8C82; --teal-d:#0A6B63; --mint:#E3F4F1; --sky:#F3F8FA; --white:#fff; --muted:#5B6E7A; --line:#DDE8EC;
+  --font:"Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --bk-bg:var(--sky); --bk-fg:var(--navy); --bk-card:#fff; --bk-line:var(--line); --bk-muted:var(--muted); --bk-accent:var(--teal); --bk-accent-fg:#fff; --bk-soft:var(--mint); --bk-radius:22px; --bk-display:var(--font); --bk-accent-text:var(--teal-d);
+  --ag-bg:var(--navy); --ag-fg:#EAF3F6; --ag-accent:#5FD3C6; --ag-accent-fg:var(--navy);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--navy);font:16.5px/1.65 var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:800;line-height:1.05;letter-spacing:-.035em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+p{margin:0}
+.kick{display:inline-flex;align-items:center;gap:8px;font:700 .74rem/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.kick::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;font:700 .95rem var(--font);text-decoration:none;transition:transform .2s,box-shadow .2s;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 14px 30px -14px rgba(14,140,130,.7)}
+.btn-soft{background:var(--mint);color:var(--teal-d)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:74px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand i{width:40px;height:40px;border-radius:12px;background:var(--teal);display:grid;place-items:center}
+.brand i svg{width:20px;height:20px;stroke:#fff;stroke-width:3.2;stroke-linecap:round}
+.brand span{display:grid;line-height:1.15}
+.brand b{font-weight:800;letter-spacing:-.02em}
+.brand small{color:var(--muted);font-size:.78rem}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-weight:500;font-size:.93rem}
+.nav ul a{text-decoration:none;color:var(--muted)}.nav ul a:hover{color:var(--navy)}
+.nav .btn{padding:12px 18px;font-size:.88rem}
+@media (max-width:880px){.nav ul{display:none}}
+@media (max-width:420px){.brand small{display:none}}
+
+.hero{background:linear-gradient(180deg,var(--sky),#fff);padding-block:clamp(40px,7vw,90px) clamp(60px,8vw,100px)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,60px);align-items:center}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.4rem);margin-top:20px}
+.hero h1 span{color:var(--teal)}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:32em;margin-top:24px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.trust span{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.87rem;font-weight:500}
+.trust svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* tarjeta de "próxima cita" */
+.hcard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 40px 80px -40px rgba(15,42,61,.35);display:grid;gap:18px;position:relative}
+.hcard::before{content:"";position:absolute;inset:-14px -14px auto auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--mint),transparent 70%);z-index:-1}
+.hc-top{display:flex;justify-content:space-between;align-items:center}
+.hc-top small{color:var(--muted);font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.hc-live{display:inline-flex;gap:6px;align-items:center;font-size:.78rem;font-weight:700;color:var(--teal)}
+.hc-live i{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(14,140,130,.5)}100%{box-shadow:0 0 0 10px rgba(14,140,130,0)}}
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.week div{border-radius:14px;padding:10px 0;text-align:center;background:var(--sky);display:grid;gap:2px}
+.week div small{font-size:.7rem;color:var(--muted)}
+.week div b{font-size:1.1rem}
+.week div.on{background:var(--teal);color:#fff}.week div.on small{color:#CFF1EC}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.times span{border:1px solid var(--line);border-radius:10px;padding:9px 0;text-align:center;font-weight:600;font-size:.9rem}
+.times span.x{opacity:.35;text-decoration:line-through;font-weight:400}
+.times span.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media (prefers-reduced-motion:reduce){.hc-live i{animation:none}html{scroll-behavior:auto}}
+
+section{padding-block:clamp(70px,10vw,130px)}
+.head{display:grid;gap:18px;max-width:42rem;margin-bottom:clamp(36px,5vw,60px)}
+.head p{color:var(--muted);font-size:1.08rem}
+
+/* mapa corporal */
+.pain{background:var(--navy);color:#EAF3F6}
+.pain .kick{color:#5FD3C6}.pain .kick::before{background:#5FD3C6}
+.pain .head p{color:#A9C0CC}
+.pain-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+@media (max-width:900px){.pain-grid{grid-template-columns:1fr}}
+.body{position:relative;width:min(300px,80vw);aspect-ratio:1/2;margin:0 auto}
+.body .p{position:absolute;background:#1C4157;border:1px solid #2A5670}
+.b-head{left:38%;top:0;width:24%;height:12%;border-radius:50%}
+.b-neck{left:45%;top:11.5%;width:10%;height:4%;border-radius:6px}
+.b-torso{left:27%;top:15%;width:46%;height:33%;border-radius:40% 40% 22% 22%}
+.b-arm-l{left:12%;top:16%;width:13%;height:36%;border-radius:40px;transform:rotate(8deg)}
+.b-arm-r{right:12%;top:16%;width:13%;height:36%;border-radius:40px;transform:rotate(-8deg)}
+.b-hip{left:30%;top:46%;width:40%;height:10%;border-radius:30% 30% 40% 40%}
+.b-leg-l{left:31%;top:54%;width:17%;height:44%;border-radius:40px}
+.b-leg-r{right:31%;top:54%;width:17%;height:44%;border-radius:40px}
+.dot{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(95,211,198,.25);display:grid;place-items:center;transition:transform .2s}
+.dot::after{content:"";width:12px;height:12px;border-radius:50%;background:#5FD3C6;box-shadow:0 0 0 4px rgba(95,211,198,.25)}
+.dot:hover{transform:scale(1.15)}
+.dot.on{background:rgba(255,183,90,.35)}.dot.on::after{background:#FFB75A;box-shadow:0 0 0 6px rgba(255,183,90,.3)}
+.zones{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.zones button{font:600 .9rem var(--font);border:1px solid #2A5670;background:transparent;color:#EAF3F6;border-radius:999px;padding:10px 16px;cursor:pointer}
+.zones button[aria-pressed="true"]{background:#5FD3C6;border-color:#5FD3C6;color:var(--navy)}
+.reco{background:#143650;border:1px solid #2A5670;border-radius:24px;padding:clamp(22px,3vw,32px);display:grid;gap:14px}
+.reco small{color:#5FD3C6;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem}
+.reco h3{font-size:1.7rem}
+.reco p{color:#A9C0CC}
+.reco ul{margin:0;padding-left:18px;color:#CFE0E7;display:grid;gap:6px}
+.reco .btn{justify-self:start;margin-top:6px}
+.disclaimer{font-size:.8rem;color:#7F98A6;margin-top:14px}
+
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.svcs{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.svcs{grid-template-columns:1fr}}
+.svc{border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s,box-shadow .2s;background:#fff}
+.svc:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(15,42,61,.4)}
+.svc .ic{width:48px;height:48px;border-radius:14px;background:var(--mint);display:grid;place-items:center}
+.svc .ic svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.25rem;letter-spacing:-.02em}
+.svc p{color:var(--muted);font-size:.95rem}
+.svc .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:.92rem}
+.svc .row b{font-size:1.15rem}
+.svc .row button{font:700 .85rem var(--font);color:var(--teal-d);background:none;border:0;cursor:pointer;padding:6px 0}
+.svc.hl{background:var(--navy);color:#EAF3F6;border-color:var(--navy)}
+.svc.hl p{color:#A9C0CC}.svc.hl .row{border-color:#2A5670}.svc.hl .row button{color:#5FD3C6}.svc.hl .ic{background:#1C4157}.svc.hl .ic svg{stroke:#5FD3C6}
+
+.book{background:var(--sky)}
+.book .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:start}
+@media (max-width:900px){.book .wrap{grid-template-columns:1fr}}
+.steps3{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps3 li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+.steps3 li::before{content:counter(s);width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-weight:800;color:var(--teal)}
+.steps3 b{display:block}
+.steps3 span{color:var(--muted);font-size:.95rem}
+
+.owner .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+@media (max-width:900px){.owner .wrap{grid-template-columns:1fr}}
+.owner ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.owner li{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
+.owner li b{color:var(--navy)}
+.owner li::before{content:"";flex:none;width:22px;height:22px;border-radius:6px;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E8C82' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:2px}
+
+.visit{background:var(--sky)}
+.visit .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
+.vc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:10px;align-content:start}
+.vc small{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--teal)}
+.vc b{font-size:1.2rem}
+.vc p{color:var(--muted)}
+.vc a.btn{justify-self:start;margin-top:8px}
+
+footer{background:var(--navy);color:#A9C0CC;padding-block:44px 30px;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer .brand b{color:#fff}footer .brand small{color:#7F98A6}
+.mbook{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:none}
+.mbook .btn{width:100%;justify-content:center}
+@media (max-width:760px){.mbook{display:block}footer{padding-bottom:100px}}
+</style>
+</head>
+<body>
+<div class="proposal">Propuesta de diseño de <b>GarBas Studio</b> para Fisioterapia Mikel Cabañes · No es la web oficial · Precios y horarios de ejemplo <a href="https://garbasstudio.github.io">garbasstudio.github.io</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i><span><b>Mikel Cabañes</b><small>Fisioterapia · Errekalde</small></span></a>
+    <ul><li><a href="#dolor">¿Dónde te duele?</a></li><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#visita">Contacto</a></li></ul>
+    <a class="btn btn-teal" href="#reservar">Pedir cita</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">Fisioterapia en Bilbao</span>
+      <h1>Vuelve a moverte <span>sin dolor.</span></h1>
+      <p class="lead">Fisioterapia y masaje terapéutico en Errekalde. Sesiones individuales y un plan pensado para ti. Pide tu cita online y elige el día y la hora que te vengan bien.</p>
+      <div class="ctas"><a class="btn btn-teal" href="#reservar">Reservar primera visita</a><a class="btn btn-soft" href="#dolor">¿Dónde te duele?</a></div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Atención individual</span>
+        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Cita online 24 h</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Errekalde · Bilbao</span>
+      </div>
+    </div>
+    <div class="hcard" aria-hidden="true">
+      <div class="hc-top"><small>Próximos huecos</small><span class="hc-live"><i></i>En directo</span></div>
+      <div class="week" id="hc-week"></div>
+      <div class="times"><span>09:00</span><span class="x">10:00</span><span class="on">11:00</span><span class="x">16:00</span><span>17:00</span><span>18:30</span></div>
+      <a class="btn btn-teal" style="justify-content:center" href="#reservar">Reservar este hueco</a>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="dolor">
+  <div class="wrap">
+    <div class="head"><span class="kick">Orientación rápida</span><h2>¿Dónde te duele?</h2><p>Toca la zona y te contamos cómo podemos ayudarte. Después, reserva tu primera visita en un minuto.</p></div>
+    <div class="pain-grid">
+      <div class="body" id="body">
+        <span class="p b-head"></span><span class="p b-neck"></span><span class="p b-arm-l"></span><span class="p b-arm-r"></span><span class="p b-torso"></span><span class="p b-hip"></span><span class="p b-leg-l"></span><span class="p b-leg-r"></span>
+      </div>
+      <div>
+        <div class="zones" id="zones" role="group" aria-label="Zonas del cuerpo"></div>
+        <div class="reco" id="reco" aria-live="polite"></div>
+        <p class="disclaimer">Orientación general. En la primera visita valoramos tu caso de forma personalizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamientos">
+  <div class="wrap">
+    <div class="head"><span class="kick">Tratamientos</span><h2>Un tratamiento para cada lesión.</h2><p>Sesiones individuales, con tiempo para escucharte y explicarte qué te pasa.</p></div>
+    <div class="svcs">
+      <article class="svc hl"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><h3>Primera visita y valoración</h3><p>Exploración, diagnóstico funcional y primera sesión de tratamiento.</p><div class="row"><b>45 €</b><button type="button" data-pick="val">Reservar →</button></div></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></span><h3>Sesión de fisioterapia</h3><p>Terapia manual y ejercicio para contracturas, cervicales, lumbares y más.</p><div class="row"><b>40 €</b><button type="button" data-pick="ses">Reservar →</button></div></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="m9 20 3-6 3 6M6 8l6 2 6-2M12 10v4"/></svg></span><h3>Fisioterapia deportiva</h3><p>Lesiones de corredores, gimnasio y deportes de equipo. Prevención y vuelta al deporte.</p><div class="row"><b>45 €</b><button type="button" data-pick="dep">Reservar →</button></div></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a8 8 0 0 0 16 0v-2a2 2 0 0 0-4 0"/></svg></span><h3>Masaje terapéutico</h3><p>Descarga muscular y alivio de tensiones acumuladas por el trabajo o el estrés.</p><div class="row"><b>40 €</b><button type="button" data-pick="mas">Reservar →</button></div></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 21l7-7M14 4l6 6-8 8-6-6z"/></svg></span><h3>Punción seca</h3><p>Técnica eficaz para puntos gatillo y dolor muscular persistente.</p><div class="row"><b>40 €</b><button type="button" data-pick="pun">Reservar →</button></div></article>
+      <article class="svc"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><h3>Bono 5 sesiones</h3><p>Para tratamientos largos: ahorra y asegura tu continuidad.</p><div class="row"><b>180 €</b><button type="button" data-pick="ses">Reservar →</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="reservar">
+  <div class="wrap">
+    <div>
+      <span class="kick">Cita online</span>
+      <h2 style="margin-top:18px">Reserva en menos de un minuto.</h2>
+      <p style="color:var(--muted);margin-top:18px;font-size:1.08rem">Sin llamadas ni esperas. Ves los huecos libres reales y eliges el que mejor te venga.</p>
+      <ol class="steps3"><li><span><b>Elige el tratamiento</b>Si es tu primera vez, empieza por la valoración.</span></li><li><span><b>Elige día y hora</b>Mañanas y tardes, de lunes a viernes.</span></li><li><span><b>Confirma</b>Recibes la confirmación y un recordatorio.</span></li></ol>
+    </div>
+    <div id="booking" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="owner">
+  <div class="wrap">
+    <div>
+      <span class="kick">Para la consulta</span>
+      <h2 style="margin-top:18px">Menos teléfono, más pacientes.</h2>
+      <p style="color:var(--muted);margin-top:18px;font-size:1.08rem">Mientras tratas a un paciente no puedes coger el teléfono. Con la reserva online, la agenda se llena sola.</p>
+      <ul><li><span><b>Avisos al momento</b> en tu móvil con cada nueva cita</span></li><li><span><b>Recordatorios automáticos</b> que reducen las citas perdidas</span></li><li><span><b>Sin comisiones</b> por paciente ni plataformas intermedias</span></li></ul>
+      <p style="margin-top:22px;font-weight:700">Prueba: reserva arriba y mira tu agenda aquí →</p>
+    </div>
+    <div id="agenda"></div>
+  </div>
+</section>
+
+<section class="visit" id="visita">
+  <div class="wrap">
+    <div class="vc"><small>Dirección</small><b>Zugastinobia Kalea, 6</b><p>48012 Bilbao · Errekalde</p><a class="btn btn-soft" href="https://www.google.com/maps/search/?api=1&query=Zugastinobia+6+Bilbao" target="_blank" rel="noopener">Cómo llegar →</a></div>
+    <div class="vc"><small>Teléfono y WhatsApp</small><b><a href="tel:+34687060194" style="text-decoration:none">687 06 01 94</a></b><p>Escríbenos y te respondemos entre sesiones.</p><a class="btn btn-soft" href="https://wa.me/34687060194" rel="noopener">Abrir WhatsApp →</a></div>
+    <div class="vc"><small>Horario</small><b>Lunes a viernes</b><p>9:00 – 14:00 y 15:30 – 20:30</p><a class="btn btn-teal" href="#reservar">Reservar cita</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><a class="brand" href="#"><i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i><span><b>Mikel Cabañes</b><small>Fisioterapia · Errekalde · Bilbao</small></span></a><p>Diseño: GarBas Studio</p></div></footer>
+<div class="mbook"><a class="btn btn-teal" href="#reservar">Reservar cita online</a></div>
+
+<script>
+window.DEMO = {
+  slug:"fisio-cabanes", name:"Fisioterapia Mikel Cabañes", who:"fisioterapeuta", address:"Zugastinobia Kalea 6, 48012 Bilbao", slot:60, days:21,
+  hours:{1:[["09:00","14:00"],["15:30","20:30"]],2:[["09:00","14:00"],["15:30","20:30"]],3:[["09:00","14:00"],["15:30","20:30"]],4:[["09:00","14:00"],["15:30","20:30"]],5:[["09:00","14:00"],["15:30","20:30"]]},
+  services:[
+    {id:"val",cat:"Primera vez",name:"Primera visita y valoración",dur:60,price:45,desc:"Exploración + primera sesión"},
+    {id:"ses",cat:"Tratamientos",name:"Sesión de fisioterapia",dur:45,price:40},
+    {id:"dep",cat:"Tratamientos",name:"Fisioterapia deportiva",dur:45,price:45},
+    {id:"mas",cat:"Tratamientos",name:"Masaje terapéutico",dur:45,price:40,desc:"Descarga muscular"},
+    {id:"pun",cat:"Tratamientos",name:"Punción seca",dur:30,price:40}
+  ],
+  agendaExamples:[{time:"09:00",svc:"Sesión de fisioterapia",name:"Paciente",dur:45},{time:"12:00",svc:"Fisioterapia deportiva",name:"Paciente",dur:45},{time:"17:30",svc:"Masaje terapéutico",name:"Paciente",dur:45}]
+};
+
+/* mini calendario de la portada */
+(function(){const w=document.getElementById("hc-week"),D=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];let d=new Date(),out=[];while(out.length<5){if(d.getDay()>0&&d.getDay()<6)out.push(new Date(d));d.setDate(d.getDate()+1)}
+w.innerHTML=out.map((x,i)=>`<div class="${i===1?"on":""}"><small>${D[x.getDay()]}</small><b>${x.getDate()}</b></div>`).join("")})();
+
+/* mapa corporal */
+const ZONES=[
+  {id:"cuello",name:"Cuello y cervicales",x:50,y:14,svc:"ses",t:"Dolor cervical y de cuello",p:"Muy habitual por postura, móvil y ordenador. Aliviamos la tensión y te enseñamos ejercicios para que no vuelva.",l:["Terapia manual","Ejercicios posturales","Punción seca si hace falta"]},
+  {id:"hombro",name:"Hombro",x:26,y:19,svc:"ses",t:"Dolor de hombro",p:"Tendinitis, contracturas o falta de movilidad. Recuperamos el rango de movimiento poco a poco.",l:["Movilización articular","Ejercicio terapéutico","Vendaje si es necesario"]},
+  {id:"espalda",name:"Espalda alta",x:50,y:26,svc:"mas",t:"Tensión en la espalda",p:"Contracturas por estrés o trabajo. Un masaje terapéutico y pautas sencillas marcan la diferencia.",l:["Masaje terapéutico","Estiramientos","Consejos de ergonomía"]},
+  {id:"lumbar",name:"Zona lumbar",x:50,y:42,svc:"val",t:"Lumbalgia",p:"El dolor lumbar tiene muchas causas. Primero valoramos qué lo provoca y después tratamos.",l:["Valoración funcional","Terapia manual","Ejercicio de control motor"]},
+  {id:"rodilla",name:"Rodilla",x:39,y:75,svc:"dep",t:"Dolor de rodilla",p:"Frecuente en corredores y deportistas. Tratamos la lesión y corregimos lo que la causa.",l:["Fisioterapia deportiva","Fortalecimiento","Plan de vuelta al deporte"]},
+  {id:"tobillo",name:"Tobillo",x:61,y:94,svc:"dep",t:"Esguince de tobillo",p:"Un esguince mal recuperado vuelve. Te ayudamos a recuperarlo bien a la primera.",l:["Drenaje y movilidad","Propiocepción","Readaptación"]}
+];
+const bodyEl=document.getElementById("body"),zonesEl=document.getElementById("zones"),recoEl=document.getElementById("reco");
+ZONES.forEach(z=>{const b=document.createElement("button");b.type="button";b.className="dot";b.style.left=z.x+"%";b.style.top=z.y+"%";b.dataset.z=z.id;b.setAttribute("aria-label",z.name);bodyEl.appendChild(b)});
+zonesEl.innerHTML=ZONES.map(z=>`<button type="button" data-z="${z.id}" aria-pressed="false">${z.name}</button>`).join("");
+function pickZone(id){const z=ZONES.find(x=>x.id===id);document.querySelectorAll("[data-z]").forEach(e=>{const on=e.dataset.z===id;e.classList.toggle("on",on);if(e.hasAttribute("aria-pressed"))e.setAttribute("aria-pressed",on)});
+  recoEl.innerHTML=`<small>${z.name}</small><h3>${z.t}</h3><p>${z.p}</p><ul>${z.l.map(x=>`<li>${x}</li>`).join("")}</ul><button class="btn btn-teal" type="button" data-pick="${z.svc}">Reservar cita para esto →</button>`;}
+document.addEventListener("click",e=>{const z=e.target.closest("[data-z]");if(z){pickZone(z.dataset.z);return}const p=e.target.closest("[data-pick]");if(p&&window.GarBasBooking){window.GarBasBooking.pick(p.dataset.pick)}});
+pickZone("lumbar");
+</script>
+<script src="../reservas.js"></script>
+</body>
+</html>
