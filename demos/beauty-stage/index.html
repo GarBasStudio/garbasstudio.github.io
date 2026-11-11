@@ -171,7 +171,7 @@ footer .brand{color:var(--porcelain)}
 <div class="facts"><div class="wrap">
   <div><b>Centro oficial LPG</b><small>Tecnología certificada</small></div>
   <div><b>Reserva 24 h</b><small>Elige día y hora al momento</small></div>
-  <div><b>Junto al Ayuntamiento</b><small>Múgica y Butrón, 6 · Bilbao</small></div>
+  <div><b>Junto al Ayuntamiento</b><small>Múgica y Butrón, 6 · De lunes a viernes</small></div>
 </div></div>
 
 <section id="tratamientos">
@@ -181,18 +181,18 @@ footer .brand{color:var(--porcelain)}
       <article class="tcard">
         <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="7"/><path d="M9 9h.01M15 9h.01M9.5 13a3.5 3.5 0 0 0 5 0"/></svg></span>
         <h3>Facial</h3><p>Piel limpia, luminosa y renovada con técnicas profesionales.</p>
-        <ul><li>Higiene facial profunda<b>45 €</b></li><li>Dermaplaning<b>50 €</b></li><li>Microdermabrasión<b>55 €</b></li><li>Facial para hombre<b>45 €</b></li></ul>
+        <ul><li>Higiene facial profunda<b>45 €</b></li><li>Dermaplaning<b>50 €</b></li><li>Peeling químico<b>60 €</b></li><li>Radiofrecuencia facial<b>65 €</b></li></ul>
       </article>
       <article class="tcard feat">
         <span class="tag">Especialidad</span>
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg></span>
-        <h3>Corporal LPG</h3><p>Tecnología LPG para reafirmar, drenar y modelar, sin agujas y sin dolor.</p>
-        <ul><li>Sesión LPG cuerpo<b>60 €</b></li><li>Bono 6 sesiones<b>330 €</b></li><li>LPG facial<b>55 €</b></li></ul>
+        <h3>Corporal LPG</h3><p>Tecnología LPG para reafirmar, drenar y modelar, sin agujas y sin dolor. Y depilación láser.</p>
+        <ul><li>Sesión LPG cuerpo<b>60 €</b></li><li>Bono 6 sesiones<b>330 €</b></li><li>LPG facial<b>55 €</b></li><li>Depilación láser<b>desde 35 €</b></li></ul>
       </article>
       <article class="tcard">
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></span>
         <h3>Cejas y pestañas</h3><p>Una mirada definida y natural que dura semanas.</p>
-        <ul><li>Diseño de cejas<b>15 €</b></li><li>Laminado de cejas<b>40 €</b></li><li>Lifting de pestañas<b>45 €</b></li><li>Tinte de pestañas<b>15 €</b></li></ul>
+        <ul><li>Diseño de cejas<b>15 €</b></li><li>Laminado de cejas<b>40 €</b></li><li>Lifting de pestañas<b>45 €</b></li><li>Microblading<b>desde 180 €</b></li></ul>
       </article>
     </div>
   </div>
@@ -241,7 +241,7 @@ footer .brand{color:var(--porcelain)}
       <dl>
         <div><dt>Dirección</dt><dd>Múgica y Butrón Kalea, 6<br>48007 Bilbao</dd></div>
         <div><dt>Teléfono</dt><dd><a href="tel:+34688763797">688 76 37 97</a></dd></div>
-        <div><dt>Horario</dt><dd>Lunes a viernes · 10:00–14:00 y 16:00–20:00<br>Sábados · 10:00–14:00</dd></div>
+        <div><dt>Horario</dt><dd>Lunes a viernes · 10:00–20:00<br>Sábados y domingos · Cerrado</dd></div>
       </dl>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-dark" href="#reservar">Reservar cita</a><a class="btn btn-line" href="https://wa.me/34688763797" rel="noopener">WhatsApp</a></div>
     </div>
@@ -256,16 +256,19 @@ footer .brand{color:var(--porcelain)}
 <script>
 window.DEMO = {
   slug:"beauty-stage", name:"Beauty Stage", who:"centro", address:"Múgica y Butrón 6, 48007 Bilbao", slot:30, days:21,
-  hours:{1:[["10:00","14:00"],["16:00","20:00"]],2:[["10:00","14:00"],["16:00","20:00"]],3:[["10:00","14:00"],["16:00","20:00"]],4:[["10:00","14:00"],["16:00","20:00"]],5:[["10:00","14:00"],["16:00","20:00"]],6:[["10:00","14:00"]]},
+  hours:{1:[["10:00","20:00"]],2:[["10:00","20:00"]],3:[["10:00","20:00"]],4:[["10:00","20:00"]],5:[["10:00","20:00"]]},
   services:[
     {id:"hig",cat:"Facial",name:"Higiene facial profunda",dur:60,price:45,desc:"Limpieza, extracción e hidratación"},
     {id:"derma",cat:"Facial",name:"Dermaplaning",dur:45,price:50,desc:"Piel lisa y luminosa al instante"},
-    {id:"micro",cat:"Facial",name:"Microdermabrasión",dur:45,price:55},
+    {id:"peel",cat:"Facial",name:"Peeling químico",dur:45,price:60},
+    {id:"rf",cat:"Facial",name:"Radiofrecuencia facial",dur:60,price:65},
+    {id:"laser",cat:"Corporal LPG",name:"Depilación láser",dur:30,price:"desde 35 €",desc:"Primera consulta de valoración incluida"},
     {id:"lpgc",cat:"Corporal LPG",name:"Sesión LPG cuerpo",dur:45,price:60,desc:"Reafirma, drena y modela"},
     {id:"lpgf",cat:"Corporal LPG",name:"LPG facial",dur:30,price:55},
     {id:"cejas",cat:"Cejas y pestañas",name:"Diseño de cejas",dur:30,price:15},
     {id:"lam",cat:"Cejas y pestañas",name:"Laminado de cejas",dur:45,price:40},
-    {id:"lift",cat:"Cejas y pestañas",name:"Lifting de pestañas",dur:60,price:45}
+    {id:"lift",cat:"Cejas y pestañas",name:"Lifting de pestañas",dur:60,price:45},
+    {id:"micb",cat:"Cejas y pestañas",name:"Microblading",dur:120,price:"desde 180 €"}
   ],
   agendaExamples:[{time:"10:00",svc:"Higiene facial profunda",name:"Clienta",dur:60},{time:"11:30",svc:"Sesión LPG cuerpo",name:"Clienta",dur:45},{time:"16:30",svc:"Laminado de cejas",name:"Clienta",dur:45}]
 };
